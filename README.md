@@ -15,6 +15,8 @@ SQLite-hosted HTTP Request Logging for Whoever™
 
 Default logging behavior works on port 80 and logs to `requests.sql`.  All logging goes to std out by default.
 
-    $ ./postbase
+```bash
+$ ./postbase
+```
 
 [Source](http://evstudio.com/simpson-strong-tie-will-replace-commonly-specified-ab-and-abe-standoff-post-bases-with-the-abw-in-2012/)
