@@ -26,15 +26,13 @@ class Post(Base):
     return 'Post(%s: %s [%s])' % (self.id, self.url, self.time)
 
 
-def create_database(filename=None):
-  if not filename:
-    filename = SQLITE_PATH
-  return create_engine(filename, echo=True)
-
-
 def get_database(engine=None, filename=None):
+  filename = filename or SQLITE_PATH
   if not engine:
-    engine = create_database(filename=filename)
+    engine = create_engine(
+      filename,
+      echo=True
+    )
     Base.metadata.create_all(engine)
   return engine
 

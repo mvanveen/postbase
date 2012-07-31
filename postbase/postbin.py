@@ -26,7 +26,7 @@ def get_post(url=''):
   p = Post(
     '/' + url,
     time.mktime(datetime.datetime.utcnow().timetuple()),
-    request.body.read()
+    request.body.read(),
     json.dumps(dict(request.query))
   )
   session.add(p)
