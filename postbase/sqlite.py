@@ -2,11 +2,12 @@ from sqlalchemy import *
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import relation, sessionmaker
 
-import config
+from config import get_configuration
 
 Base  = declarative_base()
+config = get_configuration()
 
-SQLITE_PATH = 'sqlite:///' + config.get_sqlite_filename()
+SQLITE_PATH = 'sqlite:///' + config.sqlite_filename
 
 class Post(Base):
   """Represents a UNIX Alias found from Github"""
